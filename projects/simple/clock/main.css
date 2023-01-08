@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -11,6 +13,7 @@
 
 body {
     background-color: var(--bgColor-primary);
+    font-family: 'Figtree', sans-serif;
 }
 
 main {
@@ -21,16 +24,16 @@ main {
 
 .clock {
     background-color: var(--bgColor-secondary);
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 500px;
+    max-height: 200px;
     margin-top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 5px solid var(--fontColor);
-    padding: 3.5rem;
-    border-radius: 50%;
+    padding: 4rem;
+    /* border-radius: 50%; */
 }
 
 .header {
@@ -40,20 +43,29 @@ main {
 .time {
     display: flex;
     flex-direction: row;
+    font-size: 2rem;
+}
+
+.meridian {
     font-size: 1.5rem;
+    align-self: center;
 }
 
-.hour, .minuet, .second, .meridian {
-    padding: 0.05rem;
-    margin: 5px 0;
+.hour, .minuet, .second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    margin: 5px 3px;
+    background-color: hsl(32, 80%, 70%, 0.7);
+    border: 0.5px solid white;
+    width: 56px;
+    height: 56px;
 }
 
-.hour::after {
-    content: ":";
-}
-
-.minuet::after {
-    content: ":";
+.time-colon {
+    align-self: center;
+    margin: 0 2.5px;
 }
 
 .date {
@@ -67,4 +79,19 @@ main {
     border-radius: 5px;
     border: none;
     padding: 3px 10px;
+    background-color: hsl(32, 80%, 70%);
+    color: black;
+}
+
+.time-format:hover {
+    background-color: hsl(32, 80%, 49%);
+    /* color: hsl(0, 0%, 80%); */
+}
+
+@media screen and (max-width: 400px) {
+    .clock {
+        border-radius: 15px;
+        padding: 2rem;
+    }
+    
 }
